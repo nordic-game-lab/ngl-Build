@@ -1,6 +1,6 @@
 {
   "name": "ngl-build",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build tool for Nordic Game Lab, LLC. projects",
   "bin": {
     "ngl-build": "./bin/builder-cli.js"
@@ -13,7 +13,7 @@
   "author": "Andrew Ball <andrew@p.aball.dev>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "esbuild": "^0.20.0", 
+    "esbuild": "^0.25.0", 
     "fs-extra": "^11.2.0", 
     "yargs": "^17.7.2",    
     "typescript": "^5.4.0" 
