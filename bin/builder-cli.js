@@ -9,11 +9,11 @@ const { buildProject } = require('../lib/build');
 yargs(hideBin(process.argv))
   .command(
     'init',
-    'Generate a default nglBuild.config.js file',
+    'Generate a default nglBuild.config.cjs file',
     () => {},
     async (argv) => {
       try {
-        const configPath = path.resolve(process.cwd(), 'nglBuild.config.js');
+        const configPath = path.resolve(process.cwd(), 'nglBuild.config.cjs');
         await generateDefaultConfig(configPath);
         console.log(`✅ Default configuration file created at ${configPath}`);
       } catch (error) {
@@ -35,7 +35,7 @@ yargs(hideBin(process.argv))
     },
     async (argv) => {
       try {
-        const configPath = path.resolve(process.cwd(), 'nglBuild.config.js');
+        const configPath = path.resolve(process.cwd(), 'nglBuild.config.cjs');
         const config = await loadConfig(configPath);
         if (!config) {
           console.error(
