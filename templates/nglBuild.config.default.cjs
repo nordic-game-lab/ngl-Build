@@ -1,4 +1,4 @@
-// nglBuild.config.default.js
+// nglBuild.config.default.cjs
 const path = require('path');
 
 module.exports = {
