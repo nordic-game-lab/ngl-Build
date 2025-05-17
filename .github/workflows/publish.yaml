@@ -1,0 +1,25 @@
+name: Deploy code
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+    - uses: actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        registry-url: https://registry.npmjs.org/
+    - name: build
+      run: |
+        npm i
+        npm run build
+        npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.npm_token}}
