@@ -16,9 +16,16 @@ jobs:
       with:
         node-version: 18
         registry-url: https://registry.npmjs.org/
+    - name: Import Secrets
+      uses: Infisical/secrets-action@v1.0.11
+      with:
+        method: "oidc"
+        env-slug: "dev"
+        project-slug: "github-g0zh"
+        identity-id: "1ffe6b17-29ef-47ed-a54c-0912bbe40542"
     - name: build
       run: |
         npm i
         npm publish --access public
       env:
-        NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+        NODE_AUTH_TOKEN: ${{env.NPM}}
