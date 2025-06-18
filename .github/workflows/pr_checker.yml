@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Validate Label
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const labels = context.payload.pull_request.labels.map(label => label.name);
@@ -19,7 +19,7 @@ jobs:
               core.setFailed("This PR must have a label starting with 'Type:'.");
             }
       - name: Validate Description
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const body = context.payload.pull_request.body;
