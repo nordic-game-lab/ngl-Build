@@ -7,7 +7,7 @@
   },
   "main": "./lib/build.js",
   "scripts": {
-    "test": "npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail"
+    "test": "export TERM=xterm-256color && npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail"
   },
   "keywords": [
     "typescript",
