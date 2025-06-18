@@ -1,24 +1,30 @@
 {
   "name": "ngl-build",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Build tool for Nordic Game Lab, LLC. projects",
   "bin": {
     "ngl-build": "./bin/builder-cli.js"
   },
-  "main": "./lib/build.js", 
+  "main": "./lib/build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || echo \"Test failed\""
   },
-  "keywords": ["typescript", "build", "cli"],
+  "keywords": [
+    "typescript",
+    "build",
+    "cli"
+  ],
   "author": "Andrew Ball <andrew@p.aball.dev>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "esbuild": "^0.25.0", 
-    "fs-extra": "^11.2.0", 
-    "yargs": "^17.7.2",    
-    "typescript": "^5.4.0" 
+    "esbuild": "^0.25.0",
+    "fs-extra": "^11.2.0",
+    "yargs": "^17.7.2"
   },
   "engines": {
-    "node": ">=18.0.0" 
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }
