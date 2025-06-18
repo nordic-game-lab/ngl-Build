@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./dist/index.js"
+    "test": "node ./dist/index.js",
+    "fail": "echo \"Test failed\" && exit 1"
   },
   "keywords": [],
   "author": "",
