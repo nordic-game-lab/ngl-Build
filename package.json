@@ -7,8 +7,7 @@
   },
   "main": "./lib/build.js",
   "scripts": {
-    "test": "npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail",
-    "fail": "echo \"Test failed\" && exit 1"
+    "test": "npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail"
   },
   "keywords": [
     "typescript",
