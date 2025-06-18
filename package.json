@@ -1,13 +1,14 @@
 {
   "name": "ngl-build",
-  "version": "1.0.4",
+  "version": "1.1.1",
   "description": "Build tool for Nordic Game Lab, LLC. projects",
   "bin": {
     "ngl-build": "./bin/builder-cli.js"
   },
   "main": "./lib/build.js",
   "scripts": {
-    "test": "npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || echo \"Test failed\""
+    "test": "npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail",
+    "fail": "echo \"Test failed\" && exit 1"
   },
   "keywords": [
     "typescript",
