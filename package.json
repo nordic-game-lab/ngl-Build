@@ -14,8 +14,8 @@
     "build",
     "cli"
   ],
-  "author": "Andrew Ball <andrew@p.aball.dev>",
-  "license": "SEE LICENSE IN LICENSE",
+  "author": "Andrew Ball <andrew@aball.dev>",
+  "license": "MPL-2.0",
   "dependencies": {
     "esbuild": "^0.25.0",
     "fs-extra": "^11.2.0",
