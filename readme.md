@@ -1,6 +1,7 @@
 # Nordic Game Lab Build System
 
 ![Build status](https://code.internal.aball.dev/aball-dev/ngl-Build/badges/workflows/publish.yml/badge.svg)
+![Version](https://code.internal.aball.dev/aball-dev/ngl-Build/badges/release.svg)
 
 ## Installation
 
