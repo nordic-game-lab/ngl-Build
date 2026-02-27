@@ -4,6 +4,9 @@ on:
   release:
     types: [published]
 
+env:
+  API_TOKEN: ${{secrets.NPM_TOKEN}}
+
 jobs:
   publish:
     name: Publish to Forgejo NPM registry
@@ -14,7 +17,7 @@ jobs:
         # DO NOT USE ${{secrets.FORGEJO_TOKEN}}, use the owner's token!
         run: |
           npm config set @aball:registry ${{github.SERVER_URL}}/api/packages/aball-dev/npm/
-          npm config set "//code.internal.aball.dev/api/packages/aball-dev/npm/:_authToken=${{secrets.NPM_TOKEN}}"
+         # npm config set "//code.internal.aball.dev/api/packages/aball-dev/npm/:_authToken=${{secrets.NPM_TOKEN}}"
       - name: Checkout repo
         uses: actions/checkout@v4
       - name: Install Dependencies
