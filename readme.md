@@ -1,5 +1,7 @@
 # Nordic Game Lab Build System
 
+![Build status](https://code.internal.aball.dev/aball-dev/ngl-Build/workflows/publish.yml/badge.svg)
+
 ## Installation
 
 add this line to your ```.npmrc``` file
@@ -11,6 +13,7 @@ Then run
 ```sh
 npm install -g @aball/ngl-build
 ```
+
 ## Usage
 
 * First generate a config file with
