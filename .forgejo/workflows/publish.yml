@@ -1,0 +1,29 @@
+name: Deploy code
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    name: Publish to Forgejo NPM registry
+    runs-on: docker
+    steps:
+      - name: set npm config
+        # See note above about using {server_uri_fragment}, i.e. '//code.forgejo.org'
+        # DO NOT USE ${{secrets.FORGEJO_TOKEN}}, use the owner's token!
+        run: |
+          npm config set @aball:registry ${{github.SERVER_URL}}/api/packages/aball-dev/npm/
+          npm config set "//code.internal.aball.dev/api/packages/{owner}/npm/:_authToken=${{secrets.OWNER_TOKEN}}"
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      # WARNING: The following commented step will override the default CA settings (null == only use known CAs) and prevent npm from communicating with the public npm registry
+      # To undo it, add another step: 'run: npm config set cafile='
+      #- name: Only if using a self-signed cert
+      #  run: npm config set cafile {location of ca-cert.pem}
+      - name: Publish to registry
+        run: npm publish --scope=@aball --registry=${{github.SERVER_URL}}/api/packages/aball-dev/npm/
