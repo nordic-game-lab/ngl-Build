@@ -3,11 +3,12 @@
   "version": "2.0.5",
   "description": "Build tool for Nordic Game Lab, LLC. projects",
   "bin": {
-    "ngl-build": "./bin/builder-cli.js"
+    "ngl-build": "./dist/bin/builder-cli.js"
   },
   "main": "./lib/build.js",
   "scripts": {
-    "test": "export TERM=xterm-256color && npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail"
+    "test": "export TERM=xterm-256color && npm run build && npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail",
+    "build": "npx ngl-build build"
   },
   "keywords": [
     "typescript",
@@ -25,6 +26,7 @@
     "node": ">=22.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@aball/ngl-build": "2.0.5"
   }
 }

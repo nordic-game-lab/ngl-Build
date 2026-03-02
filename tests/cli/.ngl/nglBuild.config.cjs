@@ -5,7 +5,7 @@ module.exports = {
   common: {
     // Common settings for both web and server if any
     // e.g., sourceRoot: 'src',
-    // tsconfig: 'tsconfig.json', // Path to your tsconfig.json
+    tsconfig: '../tsconfig.json', // Path to your tsconfig.json
   },
   server: {
     entryPoints: [path.resolve(process.cwd(), 'src/index.ts')], // Entry point for server
