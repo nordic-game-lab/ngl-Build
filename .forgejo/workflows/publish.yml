@@ -22,6 +22,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Dependencies
         run: npm install
+      - name: Build Project
+        run: npm run build
       # WARNING: The following commented step will override the default CA settings (null == only use known CAs) and prevent npm from communicating with the public npm registry
       # To undo it, add another step: 'run: npm config set cafile='
       #- name: Only if using a self-signed cert
