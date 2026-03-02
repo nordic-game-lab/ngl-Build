@@ -3,6 +3,9 @@ name: Test code
 on:
   workflow_dispatch:
 
+env:
+  API_TOKEN: ${{secrets.NPM_TOKEN}}
+  
 jobs:
   publish:
     name: Test Code
