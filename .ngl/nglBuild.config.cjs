@@ -10,7 +10,7 @@ module.exports = {
     // tsconfig: 'tsconfig.json', // Path to your tsconfig.json
   },
   server: {
-    entryPoints: [path.resolve(process.cwd(), 'src/bin/builder-cli.ts'), path.resolve(process.cwd(), 'src/templates/nglBuild.config.default.ts'), path.resolve(process.cwd(), 'src/lib/config.ts'), path.resolve(process.cwd(), 'src/lib/run.ts')], // Entry point for server
+    entryPoints: [path.resolve(process.cwd(), 'src/bin/builder-cli.ts'), path.resolve(process.cwd(), 'src/templates/nglBuild.config.default.ts'), path.resolve(process.cwd(), 'src/lib/config.ts'), path.resolve(process.cwd(), 'src/lib/build.ts')], // Entry point for server
     outdir: path.resolve(process.cwd(), 'dist/'),        // Output directory for server
     // outfile: path.resolve(process.cwd(), 'dist/server/server.js'), // Use outdir for multiple files or outfile for a single bundle
     target: 'node24', // esbuild target (Node.js version)
