@@ -13,6 +13,7 @@ steps:
   - name: build_code
     image: node
     commands:
+      - echo "//code.internal.aball.dev/api/packages/aball-dev/npm/:_authToken=${API_TOKEN}" > .npmrc
       - npm config set @aball:registry https://code.internal.aball.dev/api/packages/aball-dev/npm/
       - npm ci
       - npm run build
