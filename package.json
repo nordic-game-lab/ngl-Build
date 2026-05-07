@@ -1,6 +1,6 @@
 {
   "name": "@aball/ngl-build",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Build tool for Nordic Game Lab, LLC. projects",
   "bin": {
     "ngl-build": "./dist/bin/builder-cli.js"
@@ -26,7 +26,7 @@
     "node": ">=22.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
+    "typescript": "^6.0.0",
     "@aball/ngl-build": "2.0.5"
   }
 }
