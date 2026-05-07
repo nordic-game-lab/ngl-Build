@@ -1,19 +1,12 @@
 when:
-  - event: release
-
-variables:
-  # logins for deployment targets
-  - publish_logins: &publish_logins
-      - password:
-          from_secret: CODEBERG_TOKEN
-
+  - event: [release, manual] 
 
 
 steps:
   - name: build_code
     image: node
     commands:
-      - echo "//code.internal.aball.dev/api/packages/aball-dev/npm/:_authToken=${API_TOKEN}" > .npmrc
+
       - npm config set @aball:registry https://code.internal.aball.dev/api/packages/aball-dev/npm/
       - npm ci
       - npm run build
