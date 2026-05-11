@@ -3,7 +3,7 @@ when:
    
 
 steps:
-  - name: build_code
+  - name: create_release
     image: node
     commands:
       - echo $CI_COMMIT_PULL_REQUEST_LABELS
@@ -13,5 +13,3 @@ steps:
     environment:
       API_TOKEN:
         from_secret: NGLBOT_TOKEN
-    when:
-      - event: push
