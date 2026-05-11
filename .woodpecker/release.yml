@@ -1,0 +1,17 @@
+when:
+  - event: pull_request_closed
+   
+
+steps:
+  - name: build_code
+    image: node
+    commands:
+      - echo $CI_COMMIT_PULL_REQUEST_LABELS
+      - npm config set @aball:registry https://code.internal.aball.dev/api/packages/aball-dev/npm/
+      - npm ci
+      - npm run release
+    environment:
+      API_TOKEN:
+        from_secret: NGLBOT_TOKEN
+    when:
+      - event: push
