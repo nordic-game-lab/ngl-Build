@@ -1,0 +1,16 @@
+when:
+  - event: [release, manual] 
+
+
+steps:
+  - name: build_code
+    image: node
+    commands:
+
+      - npm config set @aball:registry https://code.internal.aball.dev/api/packages/aball-dev/npm/
+      - npm ci
+      - npm run build
+      - npm publish --scope=@aball --registry=https://code.internal.aball.dev/api/packages/aball-dev/npm/
+    environment:
+      API_TOKEN:
+        from_secret: NGLBOT_TOKEN

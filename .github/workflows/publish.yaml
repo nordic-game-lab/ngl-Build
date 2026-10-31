@@ -25,7 +25,8 @@ jobs:
         identity-id: "1ffe6b17-29ef-47ed-a54c-0912bbe40542"
     - name: build
       run: |
-        npm i
-        npm publish --access public
+      - npm ci
+      - npm run build
+      - npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{env.NPM}}

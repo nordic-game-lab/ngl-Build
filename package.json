@@ -1,20 +1,22 @@
 {
   "name": "ngl-build",
-  "version": "2.0.3",
+  "version": "2.0.8",
   "description": "Build tool for Nordic Game Lab, LLC. projects",
   "bin": {
-    "ngl-build": "./bin/builder-cli.js"
+    "ngl-build": "./dist/bin/builder-cli.js"
   },
-  "main": "./lib/build.js",
+  "main": "./dist/lib/build.js",
   "scripts": {
-    "test": "export TERM=xterm-256color && npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail"
+    "test": "export TERM=xterm-256color && npm run build && npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail",
+    "build": "npx ngl-build build",
+    "release": "node .ngl/releasehelper.cjs"
   },
   "keywords": [
     "typescript",
     "build",
     "cli"
   ],
-  "author": "Andrew Ball <andrew@aball.dev>",
+  "author": "Ash Ball <andrew@aball.dev>",
   "license": "MPL-2.0",
   "dependencies": {
     "esbuild": "^0.28.0",
@@ -25,6 +27,9 @@
     "node": ">=22.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@types/node": "^25.6.2",
+    "axios": "^1.16.0",
+    "ngl-build": "^2.0.0",
+    "typescript": "^6.0.0"
   }
 }
