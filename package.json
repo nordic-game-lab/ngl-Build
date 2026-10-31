@@ -5,7 +5,7 @@
   "bin": {
     "ngl-build": "./dist/bin/builder-cli.js"
   },
-  "main": "./lib/build.js",
+  "main": "./dist/lib/build.js",
   "scripts": {
     "test": "export TERM=xterm-256color && npm run build && npm link && cd tests/cli && npm i && clear && node index.test.js --test && echo \"Test passed\" || npm run fail",
     "build": "npx ngl-build build",
