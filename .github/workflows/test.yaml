@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@09d2acae674a48949e3602304ab46fd20ae0c42f
     - uses: actions/setup-node@v7
       with:
-        node-version: 20
+        node-version: 24
     - name: install
       run: npm i
     - name: build
