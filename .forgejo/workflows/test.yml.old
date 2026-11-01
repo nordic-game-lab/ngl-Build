@@ -1,0 +1,27 @@
+name: Test code
+
+on:
+  workflow_dispatch:
+
+env:
+  API_TOKEN: ${{secrets.NPM_TOKEN}}
+  
+jobs:
+  publish:
+    name: Test Code
+    runs-on: docker
+    steps:
+      - name: set npm config
+        # See note above about using {server_uri_fragment}, i.e. '//code.forgejo.org'
+        # DO NOT USE ${{secrets.FORGEJO_TOKEN}}, use the owner's token!
+        run: |
+          npm config set @aball:registry ${{github.SERVER_URL}}/api/packages/aball-dev/npm/
+         # npm config set "//code.internal.aball.dev/api/packages/aball-dev/npm/:_authToken=${{secrets.NPM_TOKEN}}"
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Project
+        run: npm run build
+      - name: Test code
+        run: npm run test 
