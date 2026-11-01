@@ -1,18 +1,12 @@
 # Nordic Game Lab Build System
 
-![Build status](https://code.internal.aball.dev/aball-dev/ngl-Build/badges/workflows/publish.yml/badge.svg)
-![Version](https://code.internal.aball.dev/aball-dev/ngl-Build/badges/release.svg)
+
+[![Build status](https://github.com/nordic-game-lab/ngl-build/workflows/Deploy%20code/badge.svg)](https://github.com/nordic-game-lab/ngl-build/actions/workflows/publish.yaml)  [![Test status](https://github.com/nordic-game-lab/ngl-build/workflows/test%20code/badge.svg)](https://github.com/nordic-game-lab/ngl-build/actions/workflows/test.yaml) [![Version](https://img.shields.io/github/v/release/nordic-game-lab/ngl-build?logo=GitHub)](https://github.com/nordic-game-lab/ngl-build/releases)
 
 ## Installation
 
-add this line to your ```.npmrc``` file
-```
-@aball:registry=https://code.internal.aball.dev/api/packages/aball-dev/npm/
-```
-
-Then run
 ```sh
-npm install -g @aball/ngl-build
+npm install -g ngl-build
 ```
 
 ## Usage
@@ -24,8 +18,8 @@ ngl-build init
 
 * Then edit your config file
 
-* and finaly build you code with
+* and finally build your code with
 ```sh
 ngl-build build [target]
 ```
-The posible targets are ```web```, ```server```, or ```all```
+The possible targets are ```web```, ```server```, or ```all```

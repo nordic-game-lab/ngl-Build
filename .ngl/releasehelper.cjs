@@ -1,3 +1,4 @@
+// This file is only for the forgejo version
 const axios = require('axios');
 const pkg = require('../package.json');
 const token = process.env.API_TOKEN
