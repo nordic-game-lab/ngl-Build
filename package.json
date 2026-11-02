@@ -1,6 +1,6 @@
 {
   "name": "ngl-build",
-  "version": "2.0.9",
+  "version": "3.0.0",
   "description": "Build tool for Nordic Game Lab, LLC. projects",
   "bin": {
     "ngl-build": "./dist/bin/builder-cli.js"
